@@ -51,6 +51,10 @@ sns.distplot(cumReturns(0.05, 20, ibov, 5)['Down'],
              ax=axes[0,0],
              label='k = -5%, n = 20 days')
 axes[0,0].legend()
+axes[0,0].set_xlabel('Returns (%)')
+axes[0,0].axvline(cumReturns(0.05, 20, ibov, 5)['Up'].mean().values, linestyle='--')
+axes[0,0].axvline(cumReturns(0.05, 20, ibov, 5)['Down'].mean().values,color='orange',linestyle='--')
+
 sns.distplot(cumReturns(0.1, 20, ibov, 5)['Up'],
              hist=False,
              ax=axes[0,1],
@@ -60,6 +64,10 @@ sns.distplot(cumReturns(0.1, 20, ibov, 5)['Down'],
              ax=axes[0,1],
              label='k = -10%, n = 20 days')
 axes[0,1].legend()
+axes[0,1].set_xlabel('Returns (%)')
+axes[0,1].axvline(cumReturns(0.1, 20, ibov, 5)['Up'].mean().values, linestyle='--')
+axes[0,1].axvline(cumReturns(0.1, 20, ibov, 5)['Down'].mean().values,color='orange',linestyle='--')
+
 sns.distplot(cumReturns(0.05, 60, ibov, 5)['Up'],
              hist=False,
              ax=axes[1,0],
@@ -69,6 +77,10 @@ sns.distplot(cumReturns(0.05, 60, ibov, 5)['Down'],
              ax=axes[1,0],
              label='k = -5%, n = 60 days')
 axes[1,0].legend()
+axes[1,0].set_xlabel('Returns (%)')
+axes[1,0].axvline(cumReturns(0.05, 60, ibov, 5)['Up'].mean().values, linestyle='--')
+axes[1,0].axvline(cumReturns(0.05, 60, ibov, 5)['Down'].mean().values,color='orange',linestyle='--')
+
 sns.distplot(cumReturns(0.1, 60, ibov, 5)['Up'],
              hist=False,
              ax=axes[1,1],
@@ -78,3 +90,6 @@ sns.distplot(cumReturns(0.1, 60, ibov, 5)['Down'],
              ax=axes[1,1],
              label='k = -10%, n = 60 days')
 axes[1,1].legend()
+axes[1,1].set_xlabel('Returns (%)')
+axes[1,1].axvline(cumReturns(0.1, 60, ibov, 5)['Up'].mean().values, linestyle='--')
+axes[1,1].axvline(cumReturns(0.1, 60, ibov, 5)['Down'].mean().values,color='orange',linestyle='--')
